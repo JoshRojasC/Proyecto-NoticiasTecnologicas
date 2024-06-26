@@ -1,4 +1,4 @@
-*{
+* {
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
@@ -8,6 +8,8 @@
 html {
     background-color: #090606;
     color: #ffffff;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .contenedor {
@@ -19,29 +21,49 @@ html {
 
 .navegacion-principal {
     display: flex;
-    justify-content: space-between; /* Distribuir elementos a lo largo del espacio */
-    align-items: center; /* Alinear verticalmente al centro */
-    padding: 10px 0; /* Espaciado interno */
+    justify-content: space-between;
+    /* Distribuir elementos a lo largo del espacio */
+    align-items: center;
+    /* Alinear verticalmente al centro */
+    padding: 10px 0;
+    /* Espaciado interno */
+    transform: translateY(-20px); /* Inicio desplazado hacia arriba */
+    animation: fadeInDown 1s ease forwards;
 }
 
 .navegacion-principal__menu,
 .navegacion-principal__menu-derecha {
     display: flex;
-    list-style: none; /* Quitar los puntos de lista */
-    padding: 0; /* Quitar el padding por defecto */
-    margin: 0; /* Quitar el margen por defecto */
+    list-style: none;
+    /* Quitar los puntos de lista */
+    padding: 0;
+    /* Quitar el padding por defecto */
+    margin: 0;
+    /* Quitar el margen por defecto */
 }
 
 .navegacion-principal__menu li,
 .navegacion-principal__menu-derecha li {
-    margin-right: 20px; /* Espacio entre elementos de lista */
+    margin-right: 20px;
+    /* Espacio entre elementos de lista */
 }
 
 .navegacion-principal__menu a,
 .navegacion-principal__menu-derecha a {
-    color: #ffffff; /* Color blanco para los enlaces */
-    text-decoration: none; /* Quitar subrayado de los enlaces */
-    font-size: 16px; /* Tamaño de fuente para los enlaces */
+    color: #ffffff;
+    /* Color blanco para los enlaces */
+    text-decoration: none;
+    /* Quitar subrayado de los enlaces */
+    font-size: 16px;
+    /* Tamaño de fuente para los enlaces */
+}
+
+.navegacion-principal__menu a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+        font-size: 24px;
+
 }
 
 .logo {
@@ -50,16 +72,67 @@ html {
 
 /* Botón solo se muestra en dispositivos móviles */
 .boton-menu {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el contenido verticalmente */
+    position: fixed;
+    bottom: 3px; /* Ajusta la distancia desde la parte inferior */
+    right: 10px; /* Ajusta la distancia desde la parte derecha */
+    z-index: 1000;
+    background-color: floralwhite;
+    color: black;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    border: 2px solid black;
+    border-radius: 50%; /* Hace el botón redondo */
+    padding: 10px; /* Espaciado interno */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-@media (max-width: 768px) {
+.boton-menu .fa-bars {
+    margin: auto; /* Centra las barras verticalmente */
+    font-size: 1.5em;
+}
+
+
+@media screen and (max-width: 480px) {
     .boton-menu {
-        display: block;
+    display: block; /* Asegura que el botón sea visible */
+        font-size: 25px; /* Ajustar según preferencia */
+        padding: 10px; /* Ajustar según preferencia */
+        width: 60px; /* Ajustar según preferencia */
+        height: 60px; /* Ajustar según preferencia */
+        display: flex; /* Centra el contenido dentro del botón */
+        align-items: center; /* Centra el contenido verticalmente */
+        justify-content: center; /* Centra el contenido horizontalmente */
+        /* Ajustar el tamaño de letra */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .boton-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
     }
 
+    /* Estilos para tablets (ancho máximo de 768px) */
     .navegacion-principal__menu,
     .navegacion-principal__menu-derecha {
-        display: none; /* Ocultar menús en dispositivos móviles */
+        display: none;
+        /* Ocultar menús en dispositivos móviles */
+    }
+}
+/* Animación para el menú */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
