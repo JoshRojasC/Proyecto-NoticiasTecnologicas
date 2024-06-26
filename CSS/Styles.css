@@ -1,28 +1,65 @@
-body {
+*{
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    background-color:#090606;
+
+html {
+    background-color: #090606;
     color: #ffffff;
 }
-.navegacion-principal{
-display: grid;
-grid-template-columns: repeat(1,3fr);
-}
-.logo{
-display: flex;
-justify-content: left;
-max-width: 120px;
-ma
-}
-.navegacion-principal__menu{
-display: flex;
 
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.navegacion-principal__menu-derecha{
+
+.navegacion-principal {
     display: flex;
-    justify-content: right;
+    justify-content: space-between; /* Distribuir elementos a lo largo del espacio */
+    align-items: center; /* Alinear verticalmente al centro */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+.navegacion-principal__menu,
+.navegacion-principal__menu-derecha {
+    display: flex;
+    list-style: none; /* Quitar los puntos de lista */
+    padding: 0; /* Quitar el padding por defecto */
+    margin: 0; /* Quitar el margen por defecto */
+}
+
+.navegacion-principal__menu li,
+.navegacion-principal__menu-derecha li {
+    margin-right: 20px; /* Espacio entre elementos de lista */
+}
+
+.navegacion-principal__menu a,
+.navegacion-principal__menu-derecha a {
+    color: #ffffff; /* Color blanco para los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    font-size: 16px; /* Tamaño de fuente para los enlaces */
+}
+
+.logo {
+    max-width: 120px;
+}
+
+/* Botón solo se muestra en dispositivos móviles */
+.boton-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .boton-menu {
+        display: block;
+    }
+
+    .navegacion-principal__menu,
+    .navegacion-principal__menu-derecha {
+        display: none; /* Ocultar menús en dispositivos móviles */
+    }
 }
