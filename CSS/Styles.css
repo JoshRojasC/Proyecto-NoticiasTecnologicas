@@ -1,0 +1,28 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color:#090606;
+    color: #ffffff;
+}
+.navegacion-principal{
+display: grid;
+grid-template-columns: repeat(1,3fr);
+}
+.logo{
+display: flex;
+justify-content: left;
+max-width: 120px;
+ma
+}
+.navegacion-principal__menu{
+display: flex;
+
+}
+.navegacion-principal__menu-derecha{
+    display: flex;
+    justify-content: right;
+}
