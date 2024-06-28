@@ -19,15 +19,17 @@
         <nav class="navegacion-principal">
             <!-- Aqui va el logo (Marca de la compañia) -->
             <div class="navegacion-principal__marca">
-                <img src="Assets/Spotify_App_Logo.svg.png" class="logo" alt="logo de spotify">
+                <!-- Aqui agregue la id  logo para que el js pueda detectarlo y haga la animacion -->
+                <img src="Assets/Spotify_App_Logo.png" class="logo" id="logo" alt="logo de spotify">
+                <!-- el logo lo pase a formato PNG sin fondo para que se vea unicamente el logo sin el marco negro y haga un solo contraste -->
             </div>
-            <!-- Navegación Izquierda -->
+            <!-- Navegación Izquierda, aqui agregue la clase linkk para que el js pueda detectarlo -->
             <ul class="navegacion-principal__menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Buscar</a></li>
-                <li><a href="#">Tu Biblioteca</a></li>
-                <li><a href="#">Crear Playlist</a></li>
-                <li><a href="#">Tus Favoritos</a></li>
+                <li><a class="link" href="#">Inicio</a></li>
+                <li><a class="link" href="#">Buscar</a></li>
+                <li><a class="link" href="#">Tu Biblioteca</a></li>
+                <li><a class="link" href="#">Crear Playlist</a></li>
+                <li><a class="link" href="#">Tus Favoritos</a></li>
             </ul>
             <!-- Navegación Derecha -->
             <ul class="navegacion-principal__menu-derecha">
@@ -40,6 +42,72 @@
         </nav>
     </div>
     <hr>
+
+    <!-- CABECERA -->
+    <header class="cabecera">
+        <img src="Assets/showcase.jpg" alt="Imagen de cabecera" class="cabecera_imagen">
+        <h2>¡Grandes Noticias Hoy!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolor laudantium rerum, excepturi est praesentium
+            natus qui? Tempora rerum, numquam inventore eligendi in, nostrum reprehenderit, eum cumque fugit eaque
+            similique!</p>
+        <a href="#" class="boton">Regístrate <i class="fas fa-chevron-right"></i></a>
+    </header>
+
+    <!-- TARJETAS DE NOTICIAS -->
+    <div class="tarjetas-noticias">
+
+        <div class="tarjetas-noticias__tarjeta">
+            <img src="Assets/news1.jpg" class="imgen_targetas" alt="news1">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt
+                minima doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt
+                asperiores fuga?</p>
+            <a href="#">Más información <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="tarjetas-noticias__tarjeta">
+            <img src="Assets/news2.jpg" class="imgen_targetas" alt="news2">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt
+                minima doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt
+                asperiores fuga?</p>
+            <a href="#">Más información <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="tarjetas-noticias__tarjeta">
+            <img src="Assets/news3.jpg" class="imgen_targetas" alt="news3">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt
+                minima doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt
+                asperiores fuga?</p>
+            <a href="#">Más información <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="tarjetas-noticias__tarjeta">
+            <img src="Assets/news4.jpg" class="imgen_targetas" alt="news4">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt
+                minima doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt
+                asperiores fuga?</p>
+            <a href="#">Más información <i class="fas fa-angle-double-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Aque voy a agregar el JS para que cuando se haga click en el menu el vibre el logo -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.link');
+            const logo = document.getElementById('logo');
+
+            links.forEach(link => {
+                link.addEventListener('click', function () {
+                    logo.classList.add('vibrate');
+
+                    // Remover la clase de vibración después de 0.6 segundos (3 ciclos de vibración)
+                    setTimeout(() => {
+                        logo.classList.remove('vibrate');
+                    }, 600);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ html {
     color: #ffffff;
     margin-left: 10%;
     margin-right: 10%;
+
 }
 
 .contenedor {
@@ -22,12 +23,13 @@ html {
 .navegacion-principal {
     display: flex;
     justify-content: space-between;
-    /* Distribuir elementos a lo largo del espacio */
+    /* Distribuir elementos con un espacio entre ellos */
     align-items: center;
     /* Alinear verticalmente al centro */
     padding: 10px 0;
     /* Espaciado interno */
-    transform: translateY(-20px); /* Inicio desplazado hacia arriba */
+    transform: translateY(-20px);
+    /* Esto es para que el menu principal tenga un pequeno efecto al pasar el mouse encima  */
     animation: fadeInDown 1s ease forwards;
 }
 
@@ -40,12 +42,14 @@ html {
     /* Quitar el padding por defecto */
     margin: 0;
     /* Quitar el margen por defecto */
+    text-align: justify;
+
 }
 
 .navegacion-principal__menu li,
 .navegacion-principal__menu-derecha li {
     margin-right: 20px;
-    /* Espacio entre elementos de lista */
+    /* Espacio entre elementos de lista del menu*/
 }
 
 .navegacion-principal__menu a,
@@ -59,80 +63,207 @@ html {
 }
 
 .navegacion-principal__menu a:hover {
+    /* aca es para darle un efecto de brillo a las letras del mnu cuando se pasa el mouse por encima  */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
         0 0 20px rgba(255, 255, 255, 0.6),
         0 0 30px rgba(255, 255, 255, 0.4);
-        font-size: 24px;
+    font-size: 24px;
 
 }
 
-.logo {
-    max-width: 120px;
+
+.cabecera {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    /* Nuevo estilo para el ancho del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+    position: relative;
 }
 
-/* Botón solo se muestra en dispositivos móviles */
-.boton-menu {
+.cabecera_imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* esto es para cubrir el contenedor */
+    object-fit: cover;
+    /* esto es para cubrir que la imagen quede por detras del contenido */
+    z-index: -1;
+
+}
+
+.cabecera h2,
+p,
+a {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra el contenido verticalmente */
-    position: fixed;
-    bottom: 3px; /* Ajusta la distancia desde la parte inferior */
-    right: 10px; /* Ajusta la distancia desde la parte derecha */
-    z-index: 1000;
-    background-color: floralwhite;
-    color: black;
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
-    font-size: 25px;
-    width: 60px; /* Ancho del botón */
-    height: 60px; /* Alto del botón */
-    border: 2px solid black;
-    border-radius: 50%; /* Hace el botón redondo */
-    padding: 10px; /* Espaciado interno */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    text-align: justify;
+
 }
 
-.boton-menu .fa-bars {
-    margin: auto; /* Centra las barras verticalmente */
-    font-size: 1.5em;
+.boton {
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #6D6563;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px rgba(255, 255, 255, 0.8);
 }
 
 
-@media screen and (max-width: 480px) {
+
+.logo {
+    /* aca es para darle el tamaño al logo y la animacion de que se mueva en circulo  */
+    max-width: 120px;
+    animation: moveInCircle 5s linear infinite;
+}
+
+.tarjetas-noticias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: end;
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 15px;
+    gap: 20px;
+
+}
+
+.imgen_targetas {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+}
+
+.tarjetas-noticias__tarjeta h3,
+p {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+
+
+.tarjetas-noticias__tarjeta a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+    box-shadow: 5px 4px 8px rgb(255, 255, 255, 0.8);
+    background-color: #6D6563;
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.fa-angle-double-right {
+    margin-left: 15px;
+}
+
+.tarjetas-noticias__tarjeta a :hover {
+    /* Este hace efecto de iluminar y hacer mas grandes las flechas cuando se pasa el mouse */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    font-size: 24px;
+
+}
+
+@media screen and (min-width: 769px) {
+
+    /* Ocultar el botón de menú en pantallas grandes */
     .boton-menu {
-    display: block; /* Asegura que el botón sea visible */
-        font-size: 25px; /* Ajustar según preferencia */
-        padding: 10px; /* Ajustar según preferencia */
-        width: 60px; /* Ajustar según preferencia */
-        height: 60px; /* Ajustar según preferencia */
-        display: flex; /* Centra el contenido dentro del botón */
-        align-items: center; /* Centra el contenido verticalmente */
-        justify-content: center; /* Centra el contenido horizontalmente */
-        /* Ajustar el tamaño de letra */
+        display: none;
+    }
+
+    /* Elementos del menú estén visibles en pantallas grandes */
+    .navegacion-principal__menu {
+        display: flex;
     }
 }
 
 @media screen and (max-width: 768px) {
+
+    /* Mostrar el botón de menú solo en dispositivos móviles */
     .boton-menu {
-            display: block;
-            opacity: 1;
-            visibility: visible;
+        display: block;
     }
 
-    /* Estilos para tablets (ancho máximo de 768px) */
-    .navegacion-principal__menu,
-    .navegacion-principal__menu-derecha {
+    .tarjetas-noticias {
+        grid-template-columns: 1fr;
+        /* esto es para que las 4 tagetas no se vean apiladas en dispositivos moviles */
+    }
+
+    /* Ocultar la navegación principal en dispositivos o pantallas mas pequeñas */
+    .navegacion-principal__menu {
         display: none;
-        /* Ocultar menús en dispositivos móviles */
     }
 }
-/* Animación para el menú */
+
+
+/* Animación para el menú para que se aumente el tamaño de fuente al pasar el mouse */
 @keyframes fadeInDown {
     from {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Esto es para que el logo se mueva en cirulos  */
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg) translate(50px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(50px) rotate(-360deg);
+    }
+}
+
+/* Este es para que el logo Vibre cuando se hace click en algun enlace  */
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        transform: translate(-2px, -2px);
+    }
+
+    75% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+.vibrate {
+    animation: vibrate 0.2s linear infinite;
 }
