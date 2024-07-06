@@ -72,7 +72,8 @@ html {
 }
 
 
-.cabecera {
+.cabecera,
+banner-tarjetas-uno {
     display: grid;
     gap: 20px;
     width: 100%;
@@ -183,6 +184,173 @@ p {
         0 0 30px rgba(255, 255, 255, 0.4);
     font-size: 24px;
 
+}
+
+.banner-tarjetas-uno {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    /* Nuevo estilo para el ancho del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.imagen_central {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* esto es para cubrir el contenedor */
+    object-fit: cover;
+    /* esto es para cubrir que la imagen quede por detras del contenido */
+    z-index: -1;
+}
+
+.banner-tarjetas-uno h2,
+p,
+a {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+}
+
+.tarjetas-noticias_central {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: end;
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 15px;
+    gap: 20px;
+}
+
+.imagen_targetas_central {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+}
+
+.tarjetas-noticias_central a {
+    display: flex;
+    align-content: center;
+}
+
+
+.banner-tarjetas-dos {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    /* Nuevo estilo para el ancho del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.imagen_baner2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* esto es para cubrir el contenedor */
+    object-fit: cover;
+    /* esto es para cubrir que la imagen quede por detras del contenido */
+    z-index: -1;
+
+}
+
+.banner-tarjetas-dos h2,
+p,
+a {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+
+}
+
+.boton-tagetas-doble {
+    height: 10px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #6D6563;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.boton_targetas2 {
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #6D6563;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.social__enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social__enlaces a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.enlaces-pie{
+    background-color:rgb(33, 82, 82);
+}
+
+
+.enlaces-pie__contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.enlaces-pie__lista li{
+    list-style: none;
+}
+
+
+.pie{
+display: flex;
+justify-content: center;
+font-size: 14px;
 }
 
 @media screen and (min-width: 769px) {
